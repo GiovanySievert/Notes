@@ -8,6 +8,7 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+//Rota que cria o usuario no banco
 router.route('/add').post((req, res) => {
   const user = req.body.user;
   const password = req.body.password;
@@ -15,25 +16,25 @@ router.route('/add').post((req, res) => {
   const newUser = new User({user, password});
 
   newUser.save()
-    .then(() => res.json('User added!'))
+    .then(() => res.json('Usuario adicionado!'))
     .catch(err => res.status(400).json('Error: ' + err));
-
 });
 
+//Criando a Rota de validação
 router.post('/auth', (req, res) => {
   const { user, password } = req.body;
 
-  // Simple validation
+  //Validando os campos
   if(!user || !password) {
     return res.status(400).json({ msg: 'Por favor, coloque preencha todos os campos' });
   }
 
-  // Check for existing user
+  //Checando se usuario existe
   User.findOne({ user })
     .then(user => {
       if(!user) return res.status(400).json({ msg: 'Usuario não existe' });
 
-      // Validate password
+      //Comparando Senha
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if(isMatch) return res.status(200).json({ msg: 'Password Correto' });

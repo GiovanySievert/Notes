@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt")
 
 const Schema = mongoose.Schema;
 
+//Criando o Schema dos Usuarios
 const userSchema = new Schema ({
     user: {
         type: String,
