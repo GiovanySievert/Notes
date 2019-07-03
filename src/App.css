@@ -1,33 +1,68 @@
-.App {
-  text-align: center;
+/* CSS Tela de Edição da Nota  */
+.note-title {
+  height: 30px;
+  width: 500px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.note-body {
+  height: 300px;
+  width: 500px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-group {
+  max-width: 360px;
+  margin: 0 auto;
   display: flex;
+}
+
+.input-group button {
+  margin-top: 15px
+}
+
+/* CSS Tela de Login */
+
+.login-box {
+  max-width: 360px;
+  margin: 0  auto;
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column
+}
+
+.login-box button {
+  width: 360px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.login-box input {
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* CSS Tela de Cadastro de Usuario */
+
+.user-register {
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 250px;
 }
 
-.App-link {
-  color: #61dafb;
+.user-register button {
+  width: 360px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-register span {
+  margin-left: 40px;
+}
+
+.user-register input {
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
